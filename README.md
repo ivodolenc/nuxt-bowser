@@ -47,6 +47,7 @@ That's it! Start developing your app ✨
 - [Basic](https://github.com/ivodolenc/nuxt-bowser/tree/master/examples/basic)
 - [Global Name](https://github.com/ivodolenc/nuxt-bowser/tree/master/examples/global-name)
 - [Auto Detect](https://github.com/ivodolenc/nuxt-bowser/tree/master/examples/auto-detect)
+- [Auto Orientation](https://github.com/ivodolenc/nuxt-bowser/tree/master/examples/auto-orientation)
 
 ### Basic usage
 
@@ -293,6 +294,7 @@ this.$browser.isEngine(engineName)
   bowser: {
     name: 'browser',
     autoDetect: false,
+    autoOrientation: false,
     userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36'
   }
 }
@@ -438,6 +440,71 @@ Also, you can customize `attribute name` or specify a custom `prefix` for the de
 
 html[data-device*='is-desktop'] {
   background-color: green;
+}
+```
+
+### autoOrientation
+
+- Default: `false`
+
+Automatically inserts a custom `data-orientation` attribute into the `html` tag with the appropriate values based on the detected device `orientation` such as `portrait` or `landscape`.
+
+```js
+// nuxt.config.js
+
+{
+  bowser: {
+    autoOrientation: true,
+  }
+}
+```
+
+**Outputs**
+
+```html
+<html data-orientation="portrait"></html>
+```
+
+**Example (custom styling for `portrait` mode)**
+
+```css
+/* main.css  */
+
+html[data-orientation='portrait'] {
+  background-color: greenyellow;
+}
+```
+
+**Additional customization (optional)**
+
+Also, you can customize `attribute name` or specify a custom `prefix` for the detected `values`.
+
+```js
+// nuxt.config.js
+
+{
+  bowser: {
+    autoOrientation: {
+      attributeName: 'data-device-orientation',
+      valuePrefix: 'is-'
+    },
+  }
+}
+```
+
+**Outputs**
+
+```html
+<html data-device-orientation="is-landscape"></html>
+```
+
+**Example**
+
+```css
+/* main.css  */
+
+html[data-device-orientation='is-landscape'] {
+  background-color: aqua;
 }
 ```
 
