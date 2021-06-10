@@ -27,5 +27,25 @@ export default ({ app: { head, context } }, inject) => {
     }
   <% } %>
 
+  <% if(options.autoOrientation) { %>
+    if(process.client){
+      const html = document.documentElement
+      const attrName = '<%= options.autoOrientation.attributeName %>' || 'data-orientation'
+      const valPrefix = '<%= options.autoOrientation.valuePrefix %>'
+      const matchMediaPortrait = window.matchMedia('(orientation: portrait)')
+      let orientation = ''
+
+      matchMediaPortrait.matches ? (orientation = `${valPrefix}portrait`) : (orientation = `${valPrefix}landscape`)
+      
+      html.setAttribute(attrName, orientation)
+      
+      matchMediaPortrait.addEventListener('change', event => {
+        event.matches ? (orientation = `${valPrefix}portrait`) : (orientation = `${valPrefix}landscape`)
+
+        html.setAttribute(attrName, orientation)
+      })
+    }
+  <% } %>
+
   inject('<%= options.name %>', browser)
 }

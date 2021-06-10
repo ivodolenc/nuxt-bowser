@@ -6,6 +6,7 @@ export default function nuxtBowser(moduleOptions) {
   const options = {
     name: 'browser',
     autoDetect: false,
+    autoOrientation: false,
     userAgent:
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36',
 
