@@ -1,0 +1,7 @@
+html[data-orientation='portrait'] {
+  background-color: greenyellow;
+}
+
+html[data-orientation='landscape'] {
+  background-color: aqua;
+}
