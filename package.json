@@ -1,0 +1,59 @@
+{
+  "name": "nuxt-bowser",
+  "version": "1.0.0",
+  "description": "Bowser module for Nuxt.js",
+  "license": "MIT",
+  "author": "Ivo Dolenc",
+  "contributors": [
+    {
+      "name": "Ivo Dolenc <ivodolenc@gmail.com>"
+    }
+  ],
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivodolenc/nuxt-bowser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivodolenc/nuxt-bowser/issues"
+  },
+  "files": [
+    "src",
+    "templates"
+  ],
+  "keywords": [
+    "nuxt",
+    "nuxtjs",
+    "nuxt-module",
+    "nuxt-bowser",
+    "nuxt-browser",
+    "browser-detector",
+    "nuxt-browser-detector",
+    "device-detector",
+    "nuxt-detector",
+    "nuxt-device",
+    "detector"
+  ],
+  "scripts": {
+    "release": "standard-version && git push --follow-tags && npm publish",
+    "lint:eslint": "eslint --ext .js .",
+    "lint:all:eslint": "yarn lint:eslint --fix"
+  },
+  "dependencies": {
+    "bowser": "^2.11.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.28.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.3.1",
+    "standard-version": "^9.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

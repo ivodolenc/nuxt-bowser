@@ -1,0 +1,7 @@
+html[data-browser*='chrome mobile'] {
+  background-color: blue;
+}
+
+html[data-browser*='desktop'] {
+  background-color: green;
+}

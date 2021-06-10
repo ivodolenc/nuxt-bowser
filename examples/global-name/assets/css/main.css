@@ -1,0 +1,7 @@
+html[data-device*='is-chrome is-mobile'] {
+  background-color: blue;
+}
+
+html[data-device*='is-desktop'] {
+  background-color: green;
+}
