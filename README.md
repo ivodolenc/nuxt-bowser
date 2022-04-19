@@ -1,10 +1,10 @@
 <p align="center">
-    <img src=".github/assets/cover.svg" >
+    <img src=".github/assets/cover22.svg" >
 </p>
 
 <h1>Nuxt Bowser</h1>
 
-Bowser module for Nuxt.js.
+Bowser module for Nuxt.js
 
 ## Features
 
@@ -21,10 +21,10 @@ Bowser module for Nuxt.js.
 1. Add `nuxt-bowser` dependency to your project
 
 ```bash
-$ npm install --save-dev nuxt-bowser # or yarn add --dev nuxt-bowser
+$ npm i -D nuxt-bowser # or yarn add -D nuxt-bowser
 ```
 
-2. Add `nuxt-bowser` to the `buildModules` section of `nuxt.config.js`
+2. Enable `nuxt-bowser` in the `buildModules` section
 
 ```js
 // nuxt.config.js
@@ -33,16 +33,16 @@ export default {
   buildModules: ['nuxt-bowser'],
 
   bowser: {
-    /* module options */
+    /* Module Options */
   }
 }
 ```
 
-That's it! Start developing your app ✨
+That's it! Start developing your app!
 
 ## Examples
 
-💻 Here are some code examples
+Here are some code examples
 
 - [Basic](https://github.com/ivodolenc/nuxt-bowser/tree/master/examples/basic)
 - [Global Name](https://github.com/ivodolenc/nuxt-bowser/tree/master/examples/global-name)
@@ -59,15 +59,19 @@ That's it! Start developing your app ✨
     <div v-if="$browser.is('mobile')">
       <h3>Mobile</h3>
     </div>
+
     <div v-else-if="$browser.is('tablet')">
       <h3>Tablet</h3>
     </div>
+
     <div v-else-if="$browser.is('desktop')">
       <h3>Desktop</h3>
     </div>
+
     <div v-else-if="$browser.is('tv')">
       <h3>TV</h3>
     </div>
+
     <div v-else>
       <h3>Other</h3>
     </div>
@@ -283,24 +287,25 @@ this.$browser.isEngine(engineName)
 
 [More info](https://lancedikson.github.io/bowser/docs/index.html)
 
-## Options
+## Module Options
 
 **Default options**
 
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
     name: 'browser',
     autoDetect: false,
     autoOrientation: false,
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36'
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36'
   }
 }
 ```
 
-### name
+### Name
 
 - Default: `browser`
 
@@ -309,9 +314,9 @@ Allows you to `customize` the global module name.
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
-    name: 'browser',
+    name: 'browser'
   }
 }
 ```
@@ -333,9 +338,9 @@ For example, you can set it to `'device'` or any other name that suits you best.
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
-    name: 'device', // Define the option according to your needs
+    name: 'device' // Define the option according to your needs
   }
 }
 ```
@@ -357,16 +362,19 @@ this.$device.isEngine('blink')
 
 ```html
 <!-- Example ($device) - index.vue -->
+
 <template>
   <div>
     <h3 v-if="$device.is('mobile')">Mobile</h3>
+
     <h3 v-else-if="$device.is('tablet')">Tablet</h3>
+
     <h3 v-else>Desktop</h3>
   </div>
 </template>
 ```
 
-### autoDetect
+### Auto Detect
 
 - Default: `false`
 
@@ -377,9 +385,9 @@ This can be very useful if you need to set style for specific cases.
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
-    autoDetect: true,
+    autoDetect: true
   }
 }
 ```
@@ -417,12 +425,12 @@ Also, you can customize `attribute name` or specify a custom `prefix` for the de
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
     autoDetect: {
       attributeName: 'data-device',
       valuePrefix: 'is-'
-    },
+    }
   }
 }
 ```
@@ -443,7 +451,7 @@ html[data-device*='is-desktop'] {
 }
 ```
 
-### autoOrientation
+### Auto Orientation
 
 - Default: `false`
 
@@ -452,9 +460,9 @@ Automatically inserts a custom `data-orientation` attribute into the `html` tag 
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
-    autoOrientation: true,
+    autoOrientation: true
   }
 }
 ```
@@ -482,12 +490,12 @@ Also, you can customize `attribute name` or specify a custom `prefix` for the de
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
     autoOrientation: {
       attributeName: 'data-device-orientation',
       valuePrefix: 'is-'
-    },
+    }
   }
 }
 ```
@@ -508,16 +516,17 @@ html[data-device-orientation='is-landscape'] {
 }
 ```
 
-### userAgent
+### User Agent
 
 Default `userAgent` fallback for Nuxt `static` target (`nuxt generate`).
 
 ```js
 // nuxt.config.js
 
-{
+export default {
   bowser: {
-    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36'
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36'
   }
 }
 ```
@@ -530,7 +539,7 @@ Default `userAgent` fallback for Nuxt `static` target (`nuxt generate`).
 
 Copyright (c) Bowser
 
-**Nuxt Bowser Module**
+**Nuxt Bowser**
 
 [MIT License](LICENSE)
 
