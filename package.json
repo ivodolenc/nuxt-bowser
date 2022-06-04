@@ -4,15 +4,10 @@
   "description": "Bowser module for Nuxt.js",
   "author": "Ivo Dolenc",
   "license": "MIT",
-  "contributors": [
-    {
-      "name": "Ivo Dolenc <ivodolenc@gmail.com>"
-    }
-  ],
-  "homepage": "https://github.com/ivodolenc/nuxt-bowser#readme",
+  "homepage": "https://github.com/ivodolenc/nuxt-bowser",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivodolenc/nuxt-bowser.git"
+    "url": "https://github.com/ivodolenc/nuxt-bowser.git"
   },
   "bugs": {
     "url": "https://github.com/ivodolenc/nuxt-bowser/issues"
@@ -44,14 +39,14 @@
     "bowser": "^2.11.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
-    "@babel/eslint-parser": "^7.17.0",
-    "@commitlint/cli": "^16.2.3",
-    "@commitlint/config-conventional": "^16.2.1",
-    "eslint": "^8.13.0",
+    "@babel/core": "^7.18.2",
+    "@babel/eslint-parser": "^7.18.2",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "prettier": "^2.6.2",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.5.0"
   }
 }
